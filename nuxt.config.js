@@ -1,12 +1,8 @@
 import colors from 'vuetify/es5/util/colors'
 import dotenv from 'dotenv'
 
-const path =
-  process.env.NODE_ENV === 'production'
-    ? '.env'
-    : '.env.' + process.env.NODE_ENV
-
-dotenv.config({ path })
+dotenv.config()
+const { API } = process.env
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -21,7 +17,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  env: {},
+  env: { API },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
@@ -116,6 +112,8 @@ export default {
         config.externals = {
           '@firebase/app': 'commonjs @firebase/app',
           '@firebase/firestore': 'commonjs @firebase/firestore',
+          '@firebase/functions': 'commonjs @firebase/functions',
+          '@firebase/auth': 'commonjs @firebase/auth',
         }
       }
     },
