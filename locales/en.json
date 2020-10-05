@@ -1,0 +1,42 @@
+{
+  "lang": "English",
+  "go_to_dashboard": "Dashboard",
+  "signin": "Sign in",
+  "signout": "Sign out",
+  "welcome": "Welcome",
+  "index": {
+    "title": "Connect from other services to Discord.",
+    "subtitle": "Post anything from twitter, etc to Discord Webhook.You can register 10 webhooks in free.",
+    "dashboard_button": "Go to Dashboard",
+    "ad_title": "Features",
+    "ad1": "We can post tweet from twitter every 15 minutes in free."
+  },
+  "dashboard": {
+    "subscribing": "Subscribing User: ",
+    "free": {
+      "title": "Free",
+      "using": "Using Twitter Link",
+      "nonUsing": "Non-using Twitter Link",
+      "error": "Error Twitter Link"
+    }
+  },
+  "webhook": {
+    "error": "This link is not exist or this link has been set.",
+    "content": {
+      "how_0": "You can use these Replacement Tags:",
+      "how_1": "{{ URL }} -> Tweet URL",
+      "how_2": "{{ AUTHOR }} -> Tweet Author Name",
+      "how_3": "And you can write anything in webhook content."
+    },
+    "setting": {
+      "title": {
+        "basic": "Basic Information",
+        "information": "Webhook Information",
+        "setting": "Webhook Settings"
+      },
+      "valid": "This field is required",
+      "webhook_valid": "Webhook URL must be discord webhook url",
+      "isSetAuthor": "Set Username and Icon to webhooks"
+    }
+  }
+}

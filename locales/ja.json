@@ -1,0 +1,42 @@
+{
+  "lang": "日本語",
+  "go_to_dashboard": "ダッシュボード",
+  "signin": "サインイン",
+  "signout": "サインアウト",
+  "welcome": "ようこそ",
+  "index": {
+    "title": "他サービスとDiscordをつなげる。",
+    "subtitle": "Twitterなどの投稿を自動で収集し、DiscordのWebhookに投稿します。無料で10個のwebhookを登録できます。",
+    "dashboard_button": "ダッシュボードへ",
+    "ad_title": "特徴",
+    "ad1": "Twitterのツイートを無料で最大15分の遅延で投稿できます。"
+  },
+  "dashboard": {
+    "subscribing": "購読中のユーザー: ",
+    "free": {
+      "title": "無料",
+      "using": "使用中のTwitterリンク",
+      "nonUsing": "未使用のTwitterリンク",
+      "error": "エラーが発生しているTwitterリンク"
+    }
+  },
+  "webhook": {
+    "error": "このリンクは存在しないか、すでに使われています。",
+    "content": {
+      "how_0": "これらの要素を埋め込むことができます:",
+      "how_1": "{{ URL }} -> ツイートURL",
+      "how_2": "{{ AUTHOR }} -> ツイート送信者の名前",
+      "how_3": "他に文字を入力することもできます."
+    },
+    "setting": {
+      "title": {
+        "basic": "基本情報",
+        "information": "Webhookの情報",
+        "setting": "Webhookの詳細設定"
+      },
+      "valid": "このフィールドを入力してください",
+      "webhook_valid": "Webhook URL はdiscordのWebhookのURLの形式である必要があります",
+      "isSetAuthor": "Webhookの送信時にアイコンと名前をツイートの送信者に変えるか"
+    }
+  }
+}
