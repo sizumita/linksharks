@@ -26,6 +26,7 @@ import FreeTwitterLinks from '@/components/twitterFree/freeTwitterLinks'
 
 export default {
   components: { FreeTwitterLinks },
+  middleware: 'authenticated',
   data() {
     return {
       freeData: {},
