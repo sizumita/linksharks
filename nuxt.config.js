@@ -1,4 +1,12 @@
 import colors from 'vuetify/es5/util/colors'
+import dotenv from 'dotenv'
+
+const path =
+  process.env.NODE_ENV === 'production'
+    ? '.env'
+    : '.env.' + process.env.NODE_ENV
+
+dotenv.config({ path })
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
