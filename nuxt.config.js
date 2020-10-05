@@ -1,8 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-import dotenv from 'dotenv'
-
-dotenv.config()
-const { API } = process.env
 
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
@@ -17,7 +13,7 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
 
-  env: { API },
+  env: {},
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [],
