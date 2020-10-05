@@ -77,6 +77,7 @@
 import firebase from '@/plugins/firebase'
 
 export default {
+  middleware: 'authenticated',
   data() {
     return {
       id: this.$route.params.id,

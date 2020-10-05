@@ -47,7 +47,7 @@ export default {
           { code: 'ja', name: 'Japanese', iso: 'ja_JP', file: 'ja.json' },
           { code: 'en', name: 'English', iso: 'en-US', file: 'en.json' },
         ],
-        defaultLocale: 'en', // デフォルトの言語
+        defaultLocale: 'ja', // デフォルトの言語
         langDir: 'locales/', // 翻訳ファイルのディレクトリパス
         strategy: 'prefix_and_default', // URLに言語のプレフィックスを追加するかの指定
         vueI18n: {
