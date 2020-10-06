@@ -33,6 +33,20 @@ async function initializeFreeLinks() {
   }
 }
 
+async function removeFreeLink(id) {
+  const uid = firebase.auth().currentUser.uid
+  await firebase
+    .firestore()
+    .collection('users')
+    .doc(uid)
+    .collection('freeLinks')
+    .doc(id)
+    .set({
+      type: 'twitter',
+      status: 0,
+    })
+}
+
 async function setFreeTwitterLink(
   uid,
   documentId,
@@ -112,4 +126,5 @@ export default ({}, inject) => {
   inject('initializeFreeLinks', initializeFreeLinks)
   inject('fetchFreeTwitterLinks', fetchFreeTwitterLinks)
   inject('setFreeTwitterLink', setFreeTwitterLink)
+  inject('removeFreeLink', removeFreeLink)
 }

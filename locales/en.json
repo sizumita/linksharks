@@ -12,6 +12,7 @@
     "ad1": "We can post tweet from twitter every 15 minutes in free."
   },
   "dashboard": {
+    "remove": "Remove",
     "subscribing": "Subscribing User: ",
     "edit": "Edit",
     "new": "New",
