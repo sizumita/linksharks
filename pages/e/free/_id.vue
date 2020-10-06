@@ -54,6 +54,22 @@
           :value="true"
           hide-details
         ></v-checkbox>
+        <v-checkbox
+          v-model="retweet"
+          :label="$t('webhook.setting.retweet')"
+          class="mt-2"
+          color="white"
+          :value="true"
+          hide-details
+        ></v-checkbox>
+        <v-checkbox
+          v-model="reply"
+          class="mt-2"
+          :label="$t('webhook.setting.reply')"
+          color="white"
+          :value="true"
+          hide-details
+        ></v-checkbox>
 
         <v-btn
           :disabled="valid"
@@ -96,6 +112,8 @@ export default {
       twitterUserId: '',
       webhookContent: '{{ URL }}',
       isSetAuthor: false,
+      retweet: false,
+      reply: false,
       valid: false,
     }
   },
@@ -116,6 +134,8 @@ export default {
         this.twitterUserId = data.userId
         this.webhookContent = data.content || ''
         this.isSetAuthor = data.setAuthorIcon
+        this.retweet = data.retweet
+        this.reply = data.reply
       })
   },
   methods: {
@@ -132,7 +152,9 @@ export default {
           this.webhookUrl,
           this.twitterUserId,
           this.isSetAuthor,
-          this.webhookContent
+          this.webhookContent,
+          this.retweet,
+          this.reply
         )
         await this.$router.push(this.localePath('/dashboard'))
       }

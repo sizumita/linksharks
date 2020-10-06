@@ -42,7 +42,9 @@
       },
       "valid": "This field is required",
       "webhook_valid": "Webhook URL must be discord webhook url",
-      "isSetAuthor": "Set Username and Icon to webhooks"
+      "isSetAuthor": "Set Username and Icon to webhooks",
+      "retweet": "Receive retweet",
+      "reply": "Receive reply"
     }
   }
 }
