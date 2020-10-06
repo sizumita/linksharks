@@ -42,7 +42,9 @@
       },
       "valid": "このフィールドを入力してください",
       "webhook_valid": "Webhook URL はdiscordのWebhookのURLの形式である必要があります",
-      "isSetAuthor": "Webhookの送信時にアイコンと名前をツイートの送信者に変えるか"
+      "isSetAuthor": "Webhookの送信時にアイコンと名前をツイートの送信者に変える",
+      "retweet": "リツイートを受け取る",
+      "reply": "リプライを受け取る"
     }
   }
 }

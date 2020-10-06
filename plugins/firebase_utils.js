@@ -55,7 +55,9 @@ async function setFreeTwitterLink(
   webhook,
   userId,
   setAuthorIcon,
-  content
+  content,
+  retweet,
+  reply
 ) {
   const userRef = firebase.firestore().collection('users').doc(uid)
   const userDoc = await userRef.get()
@@ -67,6 +69,8 @@ async function setFreeTwitterLink(
       userId,
       setAuthorIcon,
       content,
+      retweet,
+      reply,
       last: '',
       twitterToken: userData.twitterToken,
       twitterSecret: userData.twitterSecret,
