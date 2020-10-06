@@ -13,6 +13,8 @@
   },
   "dashboard": {
     "subscribing": "Subscribing User: ",
+    "edit": "Edit",
+    "new": "New",
     "free": {
       "title": "Free",
       "using": "Using Twitter Link",
@@ -21,7 +23,10 @@
     }
   },
   "webhook": {
-    "error": "This link is not exist or this link has been set.",
+    "error": {
+      "new": "This link is not exist or this link has been set.",
+      "update": "This link is not exist or this link has not been set."
+    },
     "content": {
       "how_0": "You can use these Replacement Tags:",
       "how_1": "{{ URL }} -> Tweet URL",

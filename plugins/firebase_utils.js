@@ -33,12 +33,13 @@ async function initializeFreeLinks() {
   }
 }
 
-async function setNewFreeTwitterLink(
+async function setFreeTwitterLink(
   uid,
   documentId,
   webhook,
   userId,
-  setAuthorIcon
+  setAuthorIcon,
+  content
 ) {
   const userRef = firebase.firestore().collection('users').doc(uid)
   const userDoc = await userRef.get()
@@ -49,6 +50,7 @@ async function setNewFreeTwitterLink(
       webhook,
       userId,
       setAuthorIcon,
+      content,
       last: '',
       twitterToken: userData.twitterToken,
       twitterSecret: userData.twitterSecret,
@@ -109,5 +111,5 @@ export default ({}, inject) => {
   inject('setTokenSecretId', setTokenSecretId)
   inject('initializeFreeLinks', initializeFreeLinks)
   inject('fetchFreeTwitterLinks', fetchFreeTwitterLinks)
-  inject('setNewFreeTwitterLink', setNewFreeTwitterLink)
+  inject('setFreeTwitterLink', setFreeTwitterLink)
 }
