@@ -46,7 +46,22 @@
         <div class="text-h5 mt-10">
           {{ $t('webhook.setting.title.setting') }}
         </div>
-
+        <v-checkbox
+          v-model="retweet"
+          :label="$t('webhook.setting.retweet')"
+          class="mt-2"
+          color="white"
+          :value="true"
+          hide-details
+        ></v-checkbox>
+        <v-checkbox
+          v-model="reply"
+          class="mt-2"
+          :label="$t('webhook.setting.reply')"
+          color="white"
+          :value="true"
+          hide-details
+        ></v-checkbox>
         <v-checkbox
           v-model="isSetAuthor"
           :label="$t('webhook.setting.isSetAuthor')"
@@ -96,6 +111,8 @@ export default {
       twitterUserId: '',
       webhookContent: '{{ URL }}',
       isSetAuthor: false,
+      retweet: false,
+      reply: false,
       valid: false,
     }
   },
@@ -127,7 +144,9 @@ export default {
           this.webhookUrl,
           this.twitterUserId,
           this.isSetAuthor,
-          this.webhookContent
+          this.webhookContent,
+          this.retweet,
+          this.reply
         )
         await this.$router.push(this.localePath('/dashboard'))
       }
