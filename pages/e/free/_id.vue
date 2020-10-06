@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <div v-if="!error">
-      <div class="large-text">New Link</div>
+      <div class="large-text">Edit Link</div>
       <v-form ref="form" :v-for="valid" lazy-validation class="mt-10">
         <div class="text-h5">{{ $t('webhook.setting.title.basic') }}</div>
         <v-text-field
@@ -62,13 +62,13 @@
           style="text-transform: none"
           @click="validate"
         >
-          Submit
+          Save
         </v-btn>
       </v-form>
     </div>
     <div v-else>
       <h1>Error</h1>
-      <h2>{{ $t('webhook.error.new') }}</h2>
+      <h2>{{ $t('webhook.error.update') }}</h2>
       <v-btn
         outlined
         style="text-transform: none"
@@ -110,7 +110,12 @@ export default {
         if (!document.exists) {
           this.error = true
         }
-        if (document.data().status !== 0) this.error = true
+        if (document.data().status !== 1) this.error = true
+        const data = document.data()
+        this.webhookUrl = data.webhook
+        this.twitterUserId = data.userId
+        this.webhookContent = data.content || ''
+        this.isSetAuthor = data.setAuthorIcon
       })
   },
   methods: {
@@ -140,7 +145,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .large-text {
   font-family: 'Fredoka One', sans-serif;
   font-size: 60px;

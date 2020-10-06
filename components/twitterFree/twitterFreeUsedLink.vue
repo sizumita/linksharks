@@ -1,24 +1,55 @@
 <template>
-  <v-card dark color="teal lighten-2">
-    <v-card-title>使用中のTwitterリンク</v-card-title>
-    <v-card-subtitle>
-      {{ $t('dashboard.subscribing') }}{{ data.twitterUserId }}
-    </v-card-subtitle>
-    <v-card-actions>
-      <v-btn
-        outlined
-        :to="localePath({ name: 'n-free-id', params: { id: data.documentId } })"
-        >編集</v-btn
-      >
-    </v-card-actions>
-  </v-card>
+  <div>
+    <v-card v-if="!removed" dark color="teal lighten-2">
+      <v-card-title>{{ $t('dashboard.free.using') }}</v-card-title>
+      <v-card-subtitle>
+        {{ $t('dashboard.subscribing') }}{{ data.twitterUserId }}
+      </v-card-subtitle>
+      <v-card-actions>
+        <v-btn
+          outlined
+          :to="
+            localePath({ name: 'e-free-id', params: { id: data.documentId } })
+          "
+          style="text-transform: none"
+          >{{ $t('dashboard.edit') }}</v-btn
+        >
+        <v-spacer></v-spacer>
+        <v-btn
+          outlined
+          color="red lighten-1"
+          style="text-transform: none"
+          @click="remove"
+        >
+          {{ $t('dashboard.remove') }}
+        </v-btn>
+      </v-card-actions>
+    </v-card>
+    <twitter-free-non-used-link
+      v-else
+      :data="data"
+    ></twitter-free-non-used-link>
+  </div>
 </template>
 
 <script>
+import TwitterFreeNonUsedLink from '@/components/twitterFree/twitterFreeNonUsedLink'
 export default {
   name: 'TwitterFreeUsedLink',
+  components: { TwitterFreeNonUsedLink },
   props: {
     data: Object,
+  },
+  data() {
+    return {
+      removed: false,
+    }
+  },
+  methods: {
+    async remove() {
+      await this.$removeFreeLink(this.data.documentId)
+      this.removed = true
+    },
   },
 }
 </script>

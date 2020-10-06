@@ -6,7 +6,8 @@
       <v-btn
         outlined
         :to="localePath({ name: 'n-free-id', params: { id: data.documentId } })"
-        >新規作成</v-btn
+        style="text-transform: none"
+        >{{ $t('dashboard.new') }}</v-btn
       >
     </v-card-actions>
   </v-card>
