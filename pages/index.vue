@@ -61,10 +61,9 @@ export default {
       const token = result.credential.accessToken
       const secret = result.credential.secret
       const uid = result.user.uid
-      const id = result.additionalUserInfo.providerId
       const displayName = result.user.displayName
       if (!(await this.$isRegistered())) {
-        await this.$setTokenSecretId(token, secret, id)
+        await this.$setTokenSecretId(token, secret, displayName)
         await this.$initializeFreeLinks()
       }
       this.$store.commit('setAuth', { uid, displayName })
