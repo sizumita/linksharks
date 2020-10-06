@@ -29,6 +29,7 @@ async function initializeFreeLinks() {
       .add({
         type: 'twitter',
         status: 0, // 0 -> 使われていない, 1 -> 使われているが正常, 2 -> 使われているがエラー
+        uid,
       })
   }
 }
@@ -44,6 +45,7 @@ async function removeFreeLink(id) {
     .set({
       type: 'twitter',
       status: 0,
+      uid,
     })
 }
 
