@@ -128,7 +128,7 @@ export default {
         if (!document.exists) {
           this.error = true
         }
-        if (document.data().status !== 1) this.error = true
+        if (document.data().status === 0) this.error = true
         const data = document.data()
         this.webhookUrl = data.webhook
         this.twitterUserId = data.userId
